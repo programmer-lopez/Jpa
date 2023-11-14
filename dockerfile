@@ -17,7 +17,7 @@ FROM openjdk:17-jdk-alpine
 EXPOSE 8080
 
 # Copiar el archivo JAR construido desde la etapa anterior
-COPY --from=build /app/target/hard-0.0.1-SNAPSHOT.jar /app/hard-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/target/backend-0.0.1-SNAPSHOT.jar /app/backend-0.0.1-SNAPSHOT.jar
 
 # Establecer el punto de entrada para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "app-1.0.0.jar", "/app/hard-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app-1.0.0.jar", "/app/backend-0.0.1-SNAPSHOT.jar"]
